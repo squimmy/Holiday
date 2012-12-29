@@ -1,4 +1,4 @@
 ﻿Public Interface INode
     Property Parent As INodeContainer
-    Function GetLines() As IEnumerable(Of String)
+    Function GetLines(headingLevel As Integer) As IEnumerable(Of String)
 End Interface

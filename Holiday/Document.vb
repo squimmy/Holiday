@@ -14,7 +14,7 @@
 
     Public Iterator Function GetLines() As IEnumerable(Of String)
         For Each node In _Contents
-            For Each line In node.GetLines()
+            For Each line In node.GetLines(1)
                 Yield line
             Next
         Next

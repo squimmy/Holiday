@@ -23,13 +23,12 @@
         Dim eventWord = line.Substring(0, eventWordEnd)
         Select Case eventWord
             Case "CreateHeading"
-                Dim parameters = line.Substring(eventWordEnd + 1).Split({" "c}, 5)
+                Dim parameters = line.Substring(eventWordEnd + 1).Split({" "c}, 4)
                 Dim id = parameters(0)
-                Dim level = Integer.Parse(parameters(1))
-                Dim parentId = parameters(2)
-                Dim position = UInteger.Parse(parameters(3))
-                Dim text = parameters(4)
-                Return New CreateHeadingEvent(id, level, parentId, position, text)
+                Dim parentId = parameters(1)
+                Dim position = UInteger.Parse(parameters(2))
+                Dim text = parameters(3)
+                Return New CreateHeadingEvent(id, parentId, position, text)
             Case "CreateParagraph"
                 Dim parameters = line.Substring(eventWordEnd + 1).Split({" "c}, 4)
                 Dim id = parameters(0)
